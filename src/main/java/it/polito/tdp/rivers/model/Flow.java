@@ -3,13 +3,31 @@ package it.polito.tdp.rivers.model;
 import java.time.LocalDate;
 
 public class Flow {
+	private Integer id;
 	private LocalDate day;
 	private double flow;
 	private River river;
 
-	public Flow(LocalDate day, double flow, River river) {
+	public Flow(Integer id, LocalDate day, double flow, River river) {
+		this.id = id;
 		this.day = day;
 		this.flow = flow;
+		this.river = river;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public River getRiver() {
+		return river;
+	}
+
+	public void setRiver(River river) {
 		this.river = river;
 	}
 
@@ -31,8 +49,7 @@ public class Flow {
 
 	@Override
 	public String toString() {
-		return "Flow [day=" + day + ", flow=" + flow + ", river=" + river + "]";
+		return "Flow [id=" + id + ", day=" + day + ", flow=" + flow + ", river=" + river + "]";
 	}
-
 	
 }
